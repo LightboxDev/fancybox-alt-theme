@@ -1,0 +1,349 @@
+/* Defaults */
+.fancybox-wrap,
+.fancybox-skin,
+.fancybox-outer,
+.fancybox-inner,
+.fancybox-image,
+.fancybox-wrap iframe,
+.fancybox-wrap object,
+.fancybox-nav,
+.fancybox-nav span,
+.fancybox-tmp
+{
+	padding: 0!important;
+	margin: 0;
+	border: 0;
+	outline: none;
+	vertical-align: top;
+}
+
+.fancybox-wrap {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	z-index: 8020;
+}
+
+.fancybox-skin {
+	position: relative;
+	text-shadow: none;
+}
+
+.fancybox-opened {
+	z-index: 8030;
+}
+
+/* Drop shadow around the fancybox content */
+.fancybox-outer {
+  -webkit-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+     -moz-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.fancybox-outer, .fancybox-inner {
+	position: relative;
+}
+
+.fancybox-inner {
+	overflow: hidden;
+}
+
+.fancybox-type-iframe .fancybox-inner {
+	-webkit-overflow-scrolling: touch;
+}
+
+/* Fancybox error message (will appear if content cannot be loaded) */
+.fancybox-error {
+	margin: 0;
+	background: #FFF;
+	padding: 60px 0px;
+	min-width: 400px;
+}
+
+.fancybox-image, .fancybox-iframe {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.fancybox-image {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.fancybox-tmp {
+	position: absolute;
+	top: -99999px;
+	left: -99999px;
+	max-width: 99999px;
+	max-height: 99999px;
+}
+
+.fancybox-lock {
+    width: auto;
+}
+
+/* Fancybox overlay behind the popup box */
+.fancybox-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	display: none;
+	z-index: 8010;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.fancybox-overlay-fixed {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+}
+
+.fancybox-lock .fancybox-overlay {
+	overflow: auto;
+	overflow-y: scroll;
+}
+/* End of Defaults */
+
+/* Fancybox Buttons */
+
+/* Close Button */
+.fancybox-close {
+	position: absolute;
+	top: -25px;
+	right: -25px;
+	width: 50px; /* Width of each block in the Spire Sheet */
+	height: 50px; /* Height of each block in the Spire Sheet */
+	cursor: pointer;
+	z-index: 8040;
+  background-image: url('fancybox-icons.svg'); /* SVG Sprite Sheet */
+  background-size: 700% 200%;
+  background-position: 700% 200%;
+  background-color: black;
+  border-radius: 50%;
+  transition: 0.3s;
+  transition-property: background-color;
+}
+
+/* Close button hover state */
+.fancybox-close:hover {
+  background-position: 700% 100%;
+  background-color: #FFF;
+  transition: 0.3s;
+  transition-property: background-color;
+}
+
+/* Assigning the clickable area of the arrows */
+.fancybox-nav {
+	position: absolute;
+	top: 0;
+	width: 20%; /* Adjust the width will change the clickable area (DO NOT go over 50%) */
+	height: 100%;
+	cursor: pointer;
+	text-decoration: none;
+	z-index: 8040;
+}
+
+/* Aligning previous button to the left */
+.fancybox-prev {
+	left: 0;
+}
+
+/* Aligning next button to the right */
+.fancybox-next {
+	right: 0;
+}
+
+/* Defaults for both left and right arrows */
+.fancybox-nav span {
+	position: absolute;
+	top: 50%;
+	width: 50px; /* Width of each block in the Spire Sheet */
+	height: 50px; /* Height of each block in the Spire Sheet */
+	margin-top: -25px;
+	cursor: pointer;
+	z-index: 8040;
+  background-image: url('fancybox-icons.svg'); /* SVG Sprite Sheet */
+  background-size: 700% 200%;
+  background-color: black;
+  border-radius: 50%;
+  transition: 0.3s;
+  transition-property: background-color;
+}
+
+/* Assigning the correct SVG to the previous button */
+.fancybox-prev span {
+	left: 10px;
+	background-position: 600% 200%;
+}
+
+/* Assigning the correct SVG to the previous next */
+.fancybox-next span {
+	right: 10px;
+	background-position: 500% 200%;
+}
+
+/* Arrow hover states */
+.fancybox-nav span:hover {
+  background-color: #FFF;
+  transition: 0.3s;
+  transition-property: background-color;
+}
+
+/* Assigning the hover state icon */
+.fancybox-prev span:hover {background-position: 600% 100%;}
+
+/* Assigning the hover state icon */
+.fancybox-next span:hover {background-position: 500% 100%;}
+/* End of fancybox Buttons */
+
+/* Custom Spinner */
+
+/* Default position of the spinner */
+#fancybox-loading {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-top: -2.5em;
+	margin-left: -2.5em;
+	cursor: pointer;
+	z-index: 8060;
+}
+
+#fancybox-loading div {
+  margin: 0 auto;
+  font-size: 10px;
+  position: relative;
+  text-indent: -9999em;
+  border-top: 1.1em solid rgba(255, 255, 255, 0.2); /* Spinner Colors */
+  border-right: 1.1em solid rgba(255, 255, 255, 0.2); /* Spinner Colors */
+  border-bottom: 1.1em solid rgba(255, 255, 255, 0.2); /* Spinner Colors */
+  border-left: 1.1em solid #ffffff;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load8 1.1s infinite linear; /* Spinner Speed */
+  animation: load8 1.1s infinite linear; /* Spinner Speed */
+}
+#fancybox-loading div,
+#fancybox-loading div:after {
+  border-radius: 50%;
+  width: 5em;
+  height: 5em;
+}
+/* Keyframes for the animation */
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+/* End of Custom Spinner */
+
+/* Title helper */
+
+/* Default Title styles */
+.fancybox-title {
+	font: normal 13px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+	position: relative;
+	z-index: 8050;
+}
+
+/* Default Float option styles */
+.fancybox-title-float-wrap {
+	position: absolute;
+	bottom: 0;
+	right: 50%;
+	margin-bottom: -35px;
+	z-index: 8050;
+}
+
+.fancybox-title-float-wrap .child {
+	display: inline-block;
+	margin-right: -100%;
+	padding: 2px 20px;
+	background: transparent;
+	background: rgba(0, 0, 0, 0.8);
+	-webkit-border-radius: 15px;
+	   -moz-border-radius: 15px;
+	        border-radius: 15px;
+	text-shadow: 0 1px 2px #222;
+	color: #FFF;
+	font-weight: bold;
+	line-height: 24px;
+	white-space: nowrap;
+}
+
+/* Default Outside option styles */
+.fancybox-title-outside-wrap {
+	position: relative;
+	margin-top: 10px;
+	color: #fff;
+  text-align: left;
+}
+
+/* Default Inside option styles */
+.fancybox-title-inside-wrap {
+	padding: 10px;
+  background: #FFF;
+  text-align: left;
+}
+
+/* Default Over option styles */
+.fancybox-title-over-wrap {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	color: #fff;
+	padding: 10px;
+	background: #000;
+	background: rgba(0, 0, 0, .8);
+}
+
+/* Retina graphics */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (min--moz-device-pixel-ratio: 1.5),
+  only screen and (min-device-pixel-ratio: 1.5){
+}
+
+/* -- Invert Styles -- */
+
+/* Button Styles */
+
+/* Close Button */
+.invert .fancybox-close {
+	background-color: #FFFFFF;
+	background-position: 700% 100%;
+}
+
+/* Close Button Hover State */
+.invert .fancybox-close:hover {
+	background-position: 700% 200%;
+	background-color: black;
+}
+
+/* Arrow Buttons */
+.invert .fancybox-nav span {background-color: #FFFFFF;}
+.invert .fancybox-nav span:hover {background-color: black;}
+
+.invert .fancybox-prev span {background-position: 600% 100%;}
+.invert .fancybox-prev span:hover {background-position: 600% 200%;}
+
+.invert .fancybox-next span {background-position: 500% 100%;}
+.invert .fancybox-next span:hover {background-position: 500% 200%;}
