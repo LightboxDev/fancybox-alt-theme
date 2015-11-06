@@ -1,0 +1,8 @@
+{
+    "name": "Fancybox Alternate Theme",
+    "version": "0.0.1",
+    "main": "fancybox-pack.js",
+    "ignore": [
+      "node_modules"
+    ],
+}
