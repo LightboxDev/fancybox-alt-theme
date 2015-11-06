@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <title>LD Fancybox</title>
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <script src="fancybox.pack.js"></script>
+    <script src="helpers/fancybox-thumbs.js"></script>
+    <script src="helpers/fancybox-buttons.js"></script>
+    <link rel="stylesheet" href="fancybox.css" type="text/css">
+    <link rel="stylesheet" href="responsive.css" type="text/css">
+    <link rel="stylesheet" href="helpers/fancybox-thumbs.css" type="text/css">
+    <link rel="stylesheet" href="helpers/fancybox-buttons.css" type="text/css">
+  </head>
+  <body style="text-align: center;">
+
+    <ul>
+      <li>
+        <a class="fancybox" rel="gallery1" href="http://www.wallpapereast.com/static/images/pier_1080.jpg">
+          <img src="http://www.wallpapereast.com/static/images/pier_1080.jpg" width="400" />
+        </a>
+      </li>
+      <li>
+        <a class="fancybox" rel="gallery1" title="image-2" href="http://davidmoratilla.com/images/Portrait5.jpg">
+          <img src="http://davidmoratilla.com/images/Portrait5.jpg" width="400" />
+        </a>
+      </li>
+    </ul>
+
+    <script type="text/javascript">
+
+    	$(".fancybox").fancybox({
+        openEffect	: 'fade',
+        closeEffect	: 'fade',
+        helpers	: {
+          title : {
+        		type : 'over' // 'float', 'inside', 'outside' or 'over'
+        	},
+          buttons	: {},
+    			thumbs	: {
+    				width	: 50,
+    				height	: 50,
+    			}
+    		}
+    	});
+
+    </script>
+  </body>
+</html>
