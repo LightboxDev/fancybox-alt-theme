@@ -4,5 +4,5 @@
     "main": "fancybox-pack.js",
     "ignore": [
       "node_modules"
-    ],
+    ]
 }
